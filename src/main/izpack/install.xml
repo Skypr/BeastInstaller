@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+
+<izpack:installation version="5.0"
+	xmlns:izpack="http://izpack.org/schema/installation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://izpack.org/schema/installation http://izpack.org/schema/5.0/izpack-installation-5.0.xsd">
+	<variables>
+		<variable name="RESOURCEROOT" value="src/main/izpack" />
+	</variables>
+
+	<info>
+		<appname>BEAST</appname>
+		<appversion>1.0</appversion>
+		<appsubpath>Beast</appsubpath>
+		<javaversion>1.8</javaversion>
+
+		<authors>
+			<author name="Lukas Stapelbroek" email="lukas-stapelbroek@gmx.de" />
+		</authors>
+
+	</info>
+
+	<consoleprefs>
+		<detectTerminal>false</detectTerminal>
+	</consoleprefs>
+
+
+	<panels>
+		<panel classname="HelloPanel" />
+		<panel classname="LicencePanel" />
+		<panel classname="TargetPanel" />
+		<panel classname="PacksPanel" />
+		<panel classname="InstallPanel" />
+		<panel classname="FinishPanel" />
+	</panels>
+
+
+	<locale>
+	    <langpack iso3="eng" />
+		<langpack iso3="deu" />
+	</locale>
+
+
+	<packs>
+		<pack name="Core" required="yes">
+			<description>The core files for BEAST that are required.</description>
+			<fileset dir="" targetdir="$INSTALL_PATH/core">
+				<include name="packs/core/**/*" />
+			</fileset>
+			<fileset dir="" targetdir="$INSTALL_PATH/">
+				<include name="packs/c_tempfiles/**/*" />
+				<include name="packs/stringfiles/**/*" />
+				<include name="packs/images/**/*" />
+				<include name="packs/stringfiles/**/*" />
+			</fileset>
+		</pack>
+
+		<pack name="win32" required="yes">
+			<description>The needed files if you want to use BEAST on Windows.</description>
+			<fileset dir="" targetdir="$INSTALL_PATH/core">
+				<include name="cbmcWIN/**/*" />
+			</fileset>
+		</pack>
+	</packs>
+
+</izpack:installation>
