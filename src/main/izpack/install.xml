@@ -70,7 +70,7 @@
 
 		<pack name="win32" required="no">
 			<description>The needed files if you want to use BEAST on Windows.</description>
-			<file src="./src/main/izpack/packs/cbmcWIN/" targetdir="$INSTALL_PATH/windows" />
+			<file src="./src/main/izpack/packs/windows/" targetdir="$INSTALL_PATH/" />
 		</pack>
 	</packs>
 
