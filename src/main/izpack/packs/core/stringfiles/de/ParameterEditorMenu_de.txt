@@ -1,0 +1,15 @@
+fileMenu : Datei
+new : Neues Projekt
+save : Speichern
+save_as : Speichern unter
+load : Öffnen
+projectMenu : Projekt
+start : Teste Eigenschaften
+stop : Stoppe Test
+editorMenu : Editor
+options : Einstellungen
+showHideWindowsMenu : Fenster
+showPropertyList : Eigenschaftenliste anzeigen/ausblenden
+showBooleanExpEditor : Eigenschafteneditor anzeigen/ausblenden
+showCElectionEditor : C-Editor anzeigen/ausblenden
+

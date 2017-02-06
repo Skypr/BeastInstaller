@@ -64,12 +64,7 @@
 		<pack name="Core" required="yes">
 			<description>The core files for BEAST that are required.</description>
 
-			<file src="./src/main/izpack/packs/core/" targetdir="$INSTALL_PATH/core" />
-
-			<file src="./src/main/izpack/packs/c_tempfiles/" targetdir="$INSTALL_PATH/core" />
-			<file src="./src/main/izpack/packs/stringfiles/" targetdir="$INSTALL_PATH/core" />
-			<file src="./src/main/izpack/packs/images/" targetdir="$INSTALL_PATH/core" />
-			<file src="./src/main/izpack/packs/stringfiles/" targetdir="$INSTALL_PATH/core" />
+			<file src="./src/main/izpack/packs/core/" targetdir="$INSTALL_PATH/" />
 			
 		</pack>
 
