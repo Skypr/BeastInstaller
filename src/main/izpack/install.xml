@@ -20,18 +20,18 @@
 	</info>
 
 	<guiprefs height="400" resizable="no" width="640">
-    <modifier key="useButtonIcons" value="yes"/>
-    <modifier key="useLabelIcons" value="no"/>
-    <modifier key="labelGap" value="2"/>
-    <modifier key="layoutAnchor" value="NORTHWEST"/>
-    <modifier key="useHeadingPanel" value="no"/>
-    <modifier key="headingImageOnLeft" value="yes"/>
-    <modifier key="headingLineCount" value="1"/>
-    <modifier key="headingFontSize" value="1.5"/>
-    <modifier key="headingBackgroundColor" value="0x00ffffff"/>
-    <modifier key="headingPanelCounter" value="progressbar"/>
-    <modifier key="headingPanelCounterPos" value="inNavigationPanel"/>
-  </guiprefs>
+		<modifier key="useButtonIcons" value="yes" />
+		<modifier key="useLabelIcons" value="no" />
+		<modifier key="labelGap" value="2" />
+		<modifier key="layoutAnchor" value="NORTHWEST" />
+		<modifier key="useHeadingPanel" value="no" />
+		<modifier key="headingImageOnLeft" value="yes" />
+		<modifier key="headingLineCount" value="1" />
+		<modifier key="headingFontSize" value="1.5" />
+		<modifier key="headingBackgroundColor" value="0x00ffffff" />
+		<modifier key="headingPanelCounter" value="progressbar" />
+		<modifier key="headingPanelCounterPos" value="inNavigationPanel" />
+	</guiprefs>
 
 	<consoleprefs>
 		<detectTerminal>false</detectTerminal>
@@ -54,31 +54,28 @@
 
 
 	<resources>
-		<res id="LicencePanel.licence" src="/src/main/izpack/Licence.txt" />
-		<res id="packsLang.xml_eng" src="src/main/izpack/langPacks/myPacksLang.xml"/>
-		<res id="packsLang.xml_deu" src="src/main/izpack/langPacks/myPacksLang.xml_deu"/>
+		<res id="LicencePanel.licence" src="./src/main/izpack/Licence.txt" />
+		<res id="packsLang.xml_eng" src="./src/main/izpack/langPacks/myPacksLang.xml" />
+		<res id="packsLang.xml_deu" src="./src/main/izpack/langPacks/myPacksLang.xml_deu" />
 	</resources>
 
 
 	<packs>
 		<pack name="Core" required="yes">
 			<description>The core files for BEAST that are required.</description>
-			<fileset dir="" targetdir="$INSTALL_PATH/core">
-				<include name="packs/core/**/*" />
-			</fileset>
-			<fileset dir="" targetdir="$INSTALL_PATH/">
-				<include name="/src/main/izpack/packs/c_tempfiles/**/*" />
-				<include name="/src/main/izpack/packs/stringfiles/**/*" />
-				<include name="/src/main/izpack/packs/images/**/*" />
-				<include name="/src/main/izpack/packs/stringfiles/**/*" />
-			</fileset>
+
+			<file src="./src/main/izpack/packs/core/" targetdir="$INSTALL_PATH/core" />
+
+			<file src="./src/main/izpack/packs/c_tempfiles/" targetdir="$INSTALL_PATH/core" />
+			<file src="./src/main/izpack/packs/stringfiles/" targetdir="$INSTALL_PATH/core" />
+			<file src="./src/main/izpack/packs/images/" targetdir="$INSTALL_PATH/core" />
+			<file src="./src/main/izpack/packs/stringfiles/" targetdir="$INSTALL_PATH/core" />
+			
 		</pack>
 
 		<pack name="win32" required="no">
 			<description>The needed files if you want to use BEAST on Windows.</description>
-			<fileset dir="" targetdir="$INSTALL_PATH/core">
-				<include name="/src/main/izpack/cbmcWIN/**/*" />
-			</fileset>
+			<file src="./src/main/izpack/packs/cbmcWIN/" targetdir="$INSTALL_PATH/windows" />
 		</pack>
 	</packs>
 
