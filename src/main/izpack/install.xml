@@ -19,10 +19,23 @@
 
 	</info>
 
+	<guiprefs height="400" resizable="no" width="640">
+    <modifier key="useButtonIcons" value="yes"/>
+    <modifier key="useLabelIcons" value="no"/>
+    <modifier key="labelGap" value="2"/>
+    <modifier key="layoutAnchor" value="NORTHWEST"/>
+    <modifier key="useHeadingPanel" value="no"/>
+    <modifier key="headingImageOnLeft" value="yes"/>
+    <modifier key="headingLineCount" value="1"/>
+    <modifier key="headingFontSize" value="1.5"/>
+    <modifier key="headingBackgroundColor" value="0x00ffffff"/>
+    <modifier key="headingPanelCounter" value="progressbar"/>
+    <modifier key="headingPanelCounterPos" value="inNavigationPanel"/>
+  </guiprefs>
+
 	<consoleprefs>
 		<detectTerminal>false</detectTerminal>
 	</consoleprefs>
-
 
 	<panels>
 		<panel classname="HelloPanel" />
@@ -35,9 +48,16 @@
 
 
 	<locale>
-	    <langpack iso3="eng" />
+		<langpack iso3="eng" />
 		<langpack iso3="deu" />
 	</locale>
+
+
+	<resources>
+		<res id="LicencePanel.licence" src="/src/main/izpack/Licence.txt" />
+		<res id="packsLang.xml_eng" src="src/main/izpack/langPacks/myPacksLang.xml"/>
+		<res id="packsLang.xml_deu" src="src/main/izpack/langPacks/myPacksLang.xml_deu"/>
+	</resources>
 
 
 	<packs>
@@ -47,17 +67,17 @@
 				<include name="packs/core/**/*" />
 			</fileset>
 			<fileset dir="" targetdir="$INSTALL_PATH/">
-				<include name="packs/c_tempfiles/**/*" />
-				<include name="packs/stringfiles/**/*" />
-				<include name="packs/images/**/*" />
-				<include name="packs/stringfiles/**/*" />
+				<include name="/src/main/izpack/packs/c_tempfiles/**/*" />
+				<include name="/src/main/izpack/packs/stringfiles/**/*" />
+				<include name="/src/main/izpack/packs/images/**/*" />
+				<include name="/src/main/izpack/packs/stringfiles/**/*" />
 			</fileset>
 		</pack>
 
-		<pack name="win32" required="yes">
+		<pack name="win32" required="no">
 			<description>The needed files if you want to use BEAST on Windows.</description>
 			<fileset dir="" targetdir="$INSTALL_PATH/core">
-				<include name="cbmcWIN/**/*" />
+				<include name="/src/main/izpack/cbmcWIN/**/*" />
 			</fileset>
 		</pack>
 	</packs>

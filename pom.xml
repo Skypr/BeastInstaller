@@ -13,17 +13,20 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-
 		<info.appName>Beast Installer</info.appName>
 		<info.appsubpath>Beast/standard</info.appsubpath>
 		<izpack.dir.app>${basedir}/src/main/izpack</izpack.dir.app>
+
+		<izpack.staging>${basedir}/src/main/izpack</izpack.staging>
+
+		<izpack.version>5.0.10</izpack.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.codehaus.izpack</groupId>
 			<artifactId>izpack-maven-plugin</artifactId>
-			<version>5.0.6</version>
+			<version>5.0.10</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -35,14 +38,47 @@
 
 	<build>
 		<defaultGoal>package</defaultGoal>
-		<finalName>sample-installer</finalName>
+		<finalName>BeastInstaller</finalName>
+
+
+
 		<plugins>
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<!-- here the phase you need -->
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>/beast-installer/target</outputDirectory>
+
+							<!-- recursive copy of all resource under src/main/izpack. this is 
+								the stuff to install as well as install.xml and panel data and such -->
+							<resources>
+								<resource>
+									<directory>/beast-installer/src/main/izpack/</directory>
+									<includes>
+										<include>**/*</include>
+									</includes>
+									<filtering>false</filtering>
+								</resource>
+
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.codehaus.izpack</groupId>
 				<artifactId>izpack-maven-plugin</artifactId>
 				<extensions>true</extensions>
 				<configuration>
-					<baseDir>${project.build.directory}</baseDir>
+					<baseDir>${basedir}</baseDir>
 					<installFile>${basedir}/src/main/izpack/install.xml</installFile>
 					<attach>false</attach>
 					<kind>standard</kind>
