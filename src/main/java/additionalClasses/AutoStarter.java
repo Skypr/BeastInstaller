@@ -1,9 +1,6 @@
 package additionalClasses;
 
 import java.io.IOException;
-import java.util.Iterator;
-
-import javax.swing.JOptionPane;
 
 import com.izforge.izpack.panels.process.AbstractUIProcessHandler;
 
@@ -55,8 +52,10 @@ public class AutoStarter {
     }
     
     private void startOnLinux(String pathToJar) {
+
+        pathToJar = pathToJar.replace("\\", "/");
         
-        ProcessBuilder builder = new ProcessBuilder("java", "-jar", "/home/lukas/beast/core/BEAST.jar");
+        ProcessBuilder builder = new ProcessBuilder("java", "-jar", pathToJar);
         
         try {
             builder.start();
