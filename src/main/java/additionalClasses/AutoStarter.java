@@ -58,7 +58,7 @@ public class AutoStarter {
         pathToJar = pathToJar.replace("\\", "/");
         pathToJar.replaceAll("\"", "");
         
-        ProcessBuilder builder = new ProcessBuilder("java", "-jar", pathToJar);
+        ProcessBuilder builder = new ProcessBuilder("java -jar " + pathToJar);
         
         JOptionPane.showMessageDialog(null, pathToJar);
         
