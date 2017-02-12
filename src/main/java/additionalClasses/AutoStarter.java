@@ -56,6 +56,7 @@ public class AutoStarter {
     private void startOnLinux(String pathToJar) {
 
         pathToJar = pathToJar.replace("\\", "/");
+        pathToJar.replaceAll("\"", "");
         
         ProcessBuilder builder = new ProcessBuilder("java", "-jar", pathToJar);
         
