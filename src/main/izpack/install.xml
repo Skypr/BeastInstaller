@@ -10,11 +10,16 @@
 	<info>
 		<appname>BEAST</appname>
 		<appversion>1.0</appversion>
-		<appsubpath>Beast</appsubpath>
+		<appsubpath>beast</appsubpath>
 		<javaversion>1.8</javaversion>
 
 		<authors>
+			<author name="Niels Hanselmann" email="platzhalter@email.de" />
+			<author name="Justin Hecht" email="platzhalter@email.de" />
+			<author name="Holger Klein" email="platzhalter@email.de" />
+			<author name="Nikolai Schnell" email="platzhalter@email.de" />
 			<author name="Lukas Stapelbroek" email="lukas-stapelbroek@gmx.de" />
+			<author name="Jonas Wohnig" email="platzhalter@email.de" />
 		</authors>
 
 	</info>
@@ -43,6 +48,9 @@
 		<panel classname="TargetPanel" />
 		<panel classname="PacksPanel" />
 		<panel classname="InstallPanel" />
+		<panel classname="ShortcutPanel" id="my_shortcutpanel" />
+		<panel classname="UserInputPanel" id="additionalOptions"/>
+		<panel classname="ProcessPanel" id="processPanel" />
 		<panel classname="FinishPanel" />
 	</panels>
 
@@ -57,21 +65,35 @@
 		<res id="LicencePanel.licence" src="./src/main/izpack/Licence.txt" />
 		<res id="packsLang.xml_eng" src="./src/main/izpack/langPacks/myPacksLang.xml" />
 		<res id="packsLang.xml_deu" src="./src/main/izpack/langPacks/myPacksLang.xml_deu" />
+
+		<res id="ProcessPanel.Spec.xml" src="./src/main/izpack/postinstall.xml" />
+		
+		<res id="userInputSpec.xml" src="./src/main/izpack/userInputSpec.xml" parse="yes" type="xml"/>
 	</resources>
 
 
 	<packs>
 		<pack name="Core" required="yes">
-			<description>The core files for BEAST that are required.</description>
+			<description>The core files for BEAST that are always required.</description>
 
 			<file src="./src/main/izpack/packs/core/" targetdir="$INSTALL_PATH/" />
-			
+
 		</pack>
 
-		<pack name="win32" required="no">
-			<description>The needed files if you want to use BEAST on Windows.</description>
+		<pack name="Windows dependencies" required="no">
+			<description>The required files if you want to use BEAST on Windows.</description>
 			<file src="./src/main/izpack/packs/windows/" targetdir="$INSTALL_PATH/" />
 		</pack>
+
+		<pack name="Linux dependencies" required="no">
+			<description>The needed files if you want to use BEAST on Linux.</description>
+			<file src="./src/main/izpack/packs/linux/" targetdir="$INSTALL_PATH/" />
+		</pack>
 	</packs>
+
+	<natives>
+		<native type="izpack" name="ShellLink.dll" />
+		<native type="izpack" name="ShellLink_x64.dll" />
+	</natives>
 
 </izpack:installation>
