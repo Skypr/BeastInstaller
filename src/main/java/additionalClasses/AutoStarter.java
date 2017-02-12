@@ -63,7 +63,7 @@ public class AutoStarter {
         
         try {
     //        Runtime.getRuntime().exec("java -jar " + pathToJar);
-            ProcessBuilder builder = new ProcessBuilder("java -jar", pathToJar);
+            ProcessBuilder builder = new ProcessBuilder("bash", "-c", "java", "-jar", pathToJar);
             builder.start();
         } catch (IOException e) {
             e.printStackTrace();
