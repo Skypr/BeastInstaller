@@ -62,7 +62,7 @@ public class AutoStarter {
         JOptionPane.showMessageDialog(null, pathToJar);
         
         try {
-            ProcessBuilder builder = new ProcessBuilder("/bin/java", "-jar", pathToJar);
+            ProcessBuilder builder = new ProcessBuilder("java", "-jar", pathToJar, "&");
             builder.start();
         } catch (IOException e) {
             e.printStackTrace();
