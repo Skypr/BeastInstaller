@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+
+<izpack:installation version="5.0"
+	xmlns:izpack="http://izpack.org/schema/installation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://izpack.org/schema/installation http://izpack.org/schema/5.0/izpack-installation-5.0.xsd">
+
+
+	<natives>
+		<native type="izpack" name="ShellLink.dll" />
+		<native type="izpack" name="ShellLink_x64.dll" />
+	</natives>
+
+
+
+	<variables>
+		<variable name="RESOURCEROOT" value="src/main/izpack" />
+	</variables>
+
+	<dynamicvariables>
+		<variable name="startAfterFinish" value="false" />
+	</dynamicvariables>
+
+
+	<info>
+		<appname>BEAST</appname>
+		<appversion>1.0</appversion>
+		<appsubpath>beast</appsubpath>
+		<javaversion>1.8</javaversion>
+
+		<uninstaller write="false" />
+		<writeinstallationinformation>false</writeinstallationinformation>
+
+		<authors>
+			<author name="Niels Hanselmann" email="niels.hanselmann@gmx.de" />
+			<author name="Justin Hecht" email="justin.hecht@web.de" />
+			<author name="Holger Klein" email="platzhalter@email.de" />
+			<author name="Nikolai Schnell" email="nikolaischnell@gmx.de" />
+			<author name="Lukas Stapelbroek" email="lukas-stapelbroek@gmx.de" />
+			<author name="Jonas Wohnig" email="Jonas.Wohnig@gmx.net" />
+		</authors>
+
+	</info>
+
+	<guiprefs height="400" resizable="no" width="640">
+		<modifier key="useButtonIcons" value="yes" />
+		<modifier key="useLabelIcons" value="no" />
+		<modifier key="labelGap" value="2" />
+		<modifier key="layoutAnchor" value="NORTHWEST" />
+		<modifier key="useHeadingPanel" value="no" />
+		<modifier key="headingImageOnLeft" value="yes" />
+		<modifier key="headingLineCount" value="1" />
+		<modifier key="headingFontSize" value="1.5" />
+		<modifier key="headingBackgroundColor" value="0x00ffffff" />
+		<modifier key="headingPanelCounter" value="progressbar" />
+		<modifier key="headingPanelCounterPos" value="inNavigationPanel" />
+	</guiprefs>
+
+	<consoleprefs>
+		<detectTerminal>false</detectTerminal>
+	</consoleprefs>
+
+	<panels>
+		<panel classname="HelloPanel" />
+		<panel classname="LicencePanel" id="licence" />
+
+		<panel classname="LicencePanel" id="licenceA" />
+
+		<panel classname="LicencePanel" id="licenceC" />
+
+		<panel classname="TargetPanel" />
+		<panel classname="PacksPanel" />
+		<panel classname="InstallPanel" />
+		<panel classname="ShortcutPanel" id="shortcutpanel" />
+		<panel classname="UserInputPanel" id="additionalOptions" />
+		<panel classname="ProcessPanel" id="processPanel" />
+		<panel classname="FinishPanel" />
+	</panels>
+
+
+	<locale>
+		<langpack iso3="eng" />
+		<langpack iso3="deu" />
+	</locale>
+
+
+	<resources>
+		<res id="LicencePanel.licence" src="./src/main/izpack/Licence.txt" />
+
+		<res id="LicencePanel.licence_eng" src="./src/main/izpack/Licence_eng.txt" />
+
+		<res id="LicencePanel.licence_deu" src="./src/main/izpack/Licence_deu.txt" />
+
+		<res id="LicencePanel.licenceA" src="./src/main/izpack/LicenceAntLR.txt" />
+
+		<res id="LicencePanel.licenceC" src="./src/main/izpack/LicenceCBMC.txt" />
+
+		<res id="packsLang.xml_eng" src="./src/main/izpack/langPacks/myPacksLang.xml" />
+		<res id="packsLang.xml_deu" src="./src/main/izpack/langPacks/myPacksLang.xml_deu" />
+
+		<res id="shortcutSpec.xml" src="./src/main/izpack/shortcutSpec.xml" />
+
+		<res id="userInputSpec.xml" src="./src/main/izpack/userInputSpec.xml"
+			parse="yes" type="xml" />
+
+
+		<res id="ProcessPanel.Spec.xml" src="./src/main/izpack/postinstall.xml" />
+	</resources>
+
+
+	<jar src="./src/main/izpack/AutoStarter.jar" stage="install" />
+
+	<packs>
+		<pack name="Core" required="yes">
+			<description>The core files for BEAST that are always required.</description>
+
+			<file src="./src/main/izpack/packs/core/" targetdir="$INSTALL_PATH/" />
+
+		</pack>
+
+		<pack name="Windows dependencies" required="no">
+			<description>The required files if you want to use BEAST on Windows.</description>
+			<file src="./src/main/izpack/packs/windows/" targetdir="$INSTALL_PATH/" />
+		</pack>
+
+		<pack name="Linux dependencies" required="no">
+			<description>The needed files if you want to use BEAST on Linux.</description>
+			<file src="./src/main/izpack/packs/linux/" targetdir="$INSTALL_PATH/" />
+		</pack>
+	</packs>
+
+</izpack:installation>

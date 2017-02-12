@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<izpack:processing version="5.0"
+  xmlns:izpack="http://izpack.org/schema/processing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://izpack.org/schema/processing http://izpack.org/schema/5.0/izpack-processing-5.0.xsd">
+
+    <job name="start jar on windows">
+        <os family="windows" />
+        <executeclass name="additionalClasses.AutoStarter">
+            <arg>$startAfterFinish$</arg>
+            <arg>"$INSTALL_PATH\core\Beast.jar"</arg>
+            <arg>0</arg>
+        </executeclass>
+    </job>   
+    <job name="start jar on linux">
+      <os family="unix" />
+      <executeclass name="additionalClasses.AutoStarter">
+            <arg>$startAfterFinish$</arg>
+            <arg>"$INSTALL_PATH\core\Beast.jar"</arg>
+            <arg>1</arg>
+        </executeclass>
+    </job>
+</izpack:processing>

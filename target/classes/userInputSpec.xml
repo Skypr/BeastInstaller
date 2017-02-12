@@ -1,0 +1,12 @@
+<izpack:userinput version="5.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:izpack="http://izpack.org/schema/userinput"
+	xsi:schemaLocation="http://izpack.org/schema/userinput http://izpack.org/schema/5.0/izpack-userinput-5.0.xsd">
+	<panel id="additionalOptions">
+
+
+		<field type="check" align="left" variable="startAfterFinish">
+			<spec txt="Start BEAST after the Installation finished" true="on" false="off" set="false"/>
+		</field>
+			
+	</panel>
+</izpack:userinput>

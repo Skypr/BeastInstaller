@@ -1,18 +1,11 @@
 package additionalClasses;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.StandardOpenOption;
-import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import com.izforge.izpack.panels.licence.LicencePanel;
 import com.izforge.izpack.panels.process.AbstractUIProcessHandler;
 
-import edu.emory.mathcs.backport.java.util.Arrays;
 
 public class AutoStarter {
 
@@ -61,10 +54,13 @@ public class AutoStarter {
     }
     
     private void startOnLinux(String pathToJar) {
-        String callArgument = "java -jar " + pathToJar;
+        
+        ProcessBuilder builder = new ProcessBuilder("java", "-jar", pathToJar);
+        
+        JOptionPane.showMessageDialog(null, "path to jar: " + pathToJar);
         
         try {
-            Runtime.getRuntime().exec(callArgument);
+            builder.start();
         } catch (IOException e) {
             e.printStackTrace();
         }
