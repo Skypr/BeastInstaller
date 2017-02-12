@@ -3,9 +3,23 @@
 <izpack:installation version="5.0"
 	xmlns:izpack="http://izpack.org/schema/installation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://izpack.org/schema/installation http://izpack.org/schema/5.0/izpack-installation-5.0.xsd">
+
+
+	<natives>
+		<native type="izpack" name="ShellLink.dll" />
+		<native type="izpack" name="ShellLink_x64.dll" />
+	</natives>
+
+
+
 	<variables>
 		<variable name="RESOURCEROOT" value="src/main/izpack" />
 	</variables>
+
+	<dynamicvariables>
+		<variable name="startAfterFinish" value="false" />
+	</dynamicvariables>
+
 
 	<info>
 		<appname>BEAST</appname>
@@ -44,12 +58,17 @@
 
 	<panels>
 		<panel classname="HelloPanel" />
-		<panel classname="LicencePanel" />
+		<panel classname="LicencePanel" id="licence" />
+		
+		<panel classname="LicencePanel" id="licenceA" />
+		
+		<panel classname="LicencePanel" id="licenceC" />
+
 		<panel classname="TargetPanel" />
 		<panel classname="PacksPanel" />
 		<panel classname="InstallPanel" />
-		<panel classname="ShortcutPanel" id="my_shortcutpanel" />
-		<panel classname="UserInputPanel" id="additionalOptions"/>
+		<panel classname="ShortcutPanel" id="shortcutpanel" />
+		<panel classname="UserInputPanel" id="additionalOptions" />
 		<panel classname="ProcessPanel" id="processPanel" />
 		<panel classname="FinishPanel" />
 	</panels>
@@ -63,14 +82,29 @@
 
 	<resources>
 		<res id="LicencePanel.licence" src="./src/main/izpack/Licence.txt" />
+		
+		<res id="LicencePanel.licence" src="./src/main/izpack/Licence_eng.txt" />
+		
+		<res id="LicencePanel.licence" src="./src/main/izpack/Licence_deu.txt" />
+		
+		<res id="LicencePanel.licenceA" src="./src/main/izpack/LicenceAntLR.txt" />
+		
+		<res id="LicencePanel.licenceC" src="./src/main/izpack/LicenceCBMC.txt" />
+		
 		<res id="packsLang.xml_eng" src="./src/main/izpack/langPacks/myPacksLang.xml" />
 		<res id="packsLang.xml_deu" src="./src/main/izpack/langPacks/myPacksLang.xml_deu" />
 
+		<res id="shortcutSpec.xml" src="./src/main/izpack/shortcutSpec.xml" />
+
+		<res id="userInputSpec.xml" src="./src/main/izpack/userInputSpec.xml"
+			parse="yes" type="xml" />
+
+
 		<res id="ProcessPanel.Spec.xml" src="./src/main/izpack/postinstall.xml" />
-		
-		<res id="userInputSpec.xml" src="./src/main/izpack/userInputSpec.xml" parse="yes" type="xml"/>
 	</resources>
 
+
+	<jar src="./src/main/izpack/AutoStarter.jar" stage="install" />
 
 	<packs>
 		<pack name="Core" required="yes">
@@ -90,10 +124,5 @@
 			<file src="./src/main/izpack/packs/linux/" targetdir="$INSTALL_PATH/" />
 		</pack>
 	</packs>
-
-	<natives>
-		<native type="izpack" name="ShellLink.dll" />
-		<native type="izpack" name="ShellLink_x64.dll" />
-	</natives>
 
 </izpack:installation>

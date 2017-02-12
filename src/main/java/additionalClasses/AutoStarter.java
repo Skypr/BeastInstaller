@@ -1,15 +1,18 @@
 package additionalClasses;
 
-import java.awt.Dimension;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
+import java.util.List;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
 
-import com.izforge.izpack.panels.packs.PacksPanel;
+import com.izforge.izpack.panels.licence.LicencePanel;
 import com.izforge.izpack.panels.process.AbstractUIProcessHandler;
-import com.izforge.izpack.util.IoHelper;
+
+import edu.emory.mathcs.backport.java.util.Arrays;
 
 public class AutoStarter {
 
@@ -30,14 +33,40 @@ public class AutoStarter {
      *            String array with all of the specific arguments.
      */
     public void run(AbstractUIProcessHandler handler, String[] args) {
-
-        boolean autoStart = (args[0].equals("1"));
+        
+        boolean autoStart = (args[0].toLowerCase().equals("on$"));
         
         String pathToProgram = args[1];
         
         boolean linux = (args[2].equals("1"));
         
-       
+        if (autoStart) {
+           if (linux) {
+               startOnLinux(pathToProgram);
+           } else {
+               startOnWindows(pathToProgram);
+           }
+        }
+        
     }
 
+    private void startOnWindows(String pathToJar) {
+        String callArgument = "cmd.exe /c java -jar " + pathToJar;
+        
+        try {
+            Runtime.getRuntime().exec(callArgument);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void startOnLinux(String pathToJar) {
+        String callArgument = "java -jar " + pathToJar;
+        
+        try {
+            Runtime.getRuntime().exec(callArgument);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

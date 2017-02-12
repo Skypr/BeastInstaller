@@ -1,0 +1,41 @@
+<izpack:shortcuts version="5.0"
+	xmlns:izpack="http://izpack.org/schema/shortcuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://izpack.org/schema/shortcuts http://izpack.org/schema/5.0/izpack-shortcuts-5.0.xsd">
+
+	<skipIfNotSupported/>
+	
+	<programGroup defaultName="Applications" location="applications"/>
+	
+  <shortcut
+    name="BEAST"
+    target="$INSTALL_PATH\linux\startBEAST.sh"
+    commandLine=""
+    description="This starts BEAST"
+    iconFile="$INSTALL_PATH\core\images\other\BEAST.ico"
+    initialState="normal"
+    programGroup="no"
+    desktop="true"
+    applications="no"
+    startMenu="no"
+    startup="no">
+    <os family="unix" />
+    <createForPack name="Linux dependencies"/>
+  </shortcut>
+
+ <shortcut
+    name="BEAST"
+    target="$INSTALL_PATH\windows\startBEAST.bat"
+    commandLine=""
+    description="This starts BEAST"
+    iconFile="$INSTALL_PATH\core\images\other\BEAST.ico"
+    initialState="normal"
+    programGroup="no"
+    desktop="true"
+    applications="no"
+    startMenu="no"
+    startup="no">
+    <os family="windows" />
+    <createForPack name="Windows dependencies"/>
+  </shortcut>
+
+</izpack:shortcuts>
