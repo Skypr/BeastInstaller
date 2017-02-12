@@ -31,12 +31,12 @@
 		<writeinstallationinformation>false</writeinstallationinformation>
 
 		<authors>
-			<author name="Niels Hanselmann" email="platzhalter@email.de" />
+			<author name="Niels Hanselmann" email="niels.hanselmann@gmx.de" />
 			<author name="Justin Hecht" email="platzhalter@email.de" />
 			<author name="Holger Klein" email="platzhalter@email.de" />
 			<author name="Nikolai Schnell" email="platzhalter@email.de" />
 			<author name="Lukas Stapelbroek" email="lukas-stapelbroek@gmx.de" />
-			<author name="Jonas Wohnig" email="platzhalter@email.de" />
+			<author name="Jonas Wohnig" email="Jonas.Wohnig@gmx.net" />
 		</authors>
 
 	</info>
