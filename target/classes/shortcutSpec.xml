@@ -8,10 +8,10 @@
 	
   <shortcut
     name="BEAST"
-    target="$INSTALL_PATH/linux/startBEAST.sh"
+    target="java -jar $INSTALL_PATH/core/BEAST.jar"
     commandLine=""
     description="Starts BEAST"
-    workingDirectory="$INSTALL_PATH/linux"
+    workingDirectory="$INSTALL_PATH/core"
     iconFile="$INSTALL_PATH/core/images/other/BEAST.bmp"
     initialState="normal"
     programGroup="yes"
