@@ -1,9 +1,6 @@
 package additionalClasses;
 
 import java.io.IOException;
-import java.util.Iterator;
-
-import javax.swing.JOptionPane;
 
 import com.izforge.izpack.panels.process.AbstractUIProcessHandler;
 
@@ -54,21 +51,9 @@ public class AutoStarter {
         }
     }
     
-    private void startOnLinux(String pathToJar) {
-        
+    private void startOnLinux(String pathToJar) { 
         ProcessBuilder builder = new ProcessBuilder("java", "-jar", pathToJar);
-        
-        java.util.List<String> command = builder.command();
-        
-        String call = "";
-        
-        for (Iterator iterator = command.iterator(); iterator.hasNext();) {
-            String string = (String) iterator.next();
-            call = call + " " + string;
-        }
-        
-        JOptionPane.showMessageDialog(null, "path to jar: " + call);
-        
+
         try {
             builder.start();
         } catch (IOException e) {

@@ -4,9 +4,9 @@
 
 	<skipIfNotSupported/>
 	
-	<programGroup defaultName="Applications" location="applications"/>
+<!--	<programGroup defaultName="Applications" location="applications"/>
 	
- <!-- <shortcut
+  <shortcut
     name="BEAST"
     target="java -jar $INSTALL_PATH/core/BEAST.jar"
     commandLine=""
