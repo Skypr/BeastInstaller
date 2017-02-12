@@ -27,6 +27,9 @@
 		<appsubpath>beast</appsubpath>
 		<javaversion>1.8</javaversion>
 
+		<uninstaller write="false" />
+		<writeinstallationinformation>false</writeinstallationinformation>
+
 		<authors>
 			<author name="Niels Hanselmann" email="platzhalter@email.de" />
 			<author name="Justin Hecht" email="platzhalter@email.de" />
@@ -59,9 +62,9 @@
 	<panels>
 		<panel classname="HelloPanel" />
 		<panel classname="LicencePanel" id="licence" />
-		
+
 		<panel classname="LicencePanel" id="licenceA" />
-		
+
 		<panel classname="LicencePanel" id="licenceC" />
 
 		<panel classname="TargetPanel" />
@@ -82,15 +85,15 @@
 
 	<resources>
 		<res id="LicencePanel.licence" src="./src/main/izpack/Licence.txt" />
-		
-		<res id="LicencePanel.licence" src="./src/main/izpack/Licence_eng.txt" />
-		
-		<res id="LicencePanel.licence" src="./src/main/izpack/Licence_deu.txt" />
-		
+
+		<res id="LicencePanel.licence_eng" src="./src/main/izpack/Licence_eng.txt" />
+
+		<res id="LicencePanel.licence_deu" src="./src/main/izpack/Licence_deu.txt" />
+
 		<res id="LicencePanel.licenceA" src="./src/main/izpack/LicenceAntLR.txt" />
-		
+
 		<res id="LicencePanel.licenceC" src="./src/main/izpack/LicenceCBMC.txt" />
-		
+
 		<res id="packsLang.xml_eng" src="./src/main/izpack/langPacks/myPacksLang.xml" />
 		<res id="packsLang.xml_deu" src="./src/main/izpack/langPacks/myPacksLang.xml_deu" />
 

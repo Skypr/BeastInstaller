@@ -4,15 +4,9 @@
 	<panel id="additionalOptions">
 
 
-		<field type="check" variable="startAfterFinish">
-			<spec txt="Start BEAST after the installation finished?" true="on" false="off" set="false"/>
+		<field type="check" align="left" variable="startAfterFinish">
+			<spec txt="Start BEAST after the Installation finished" true="on" false="off" set="false"/>
 		</field>
-
-		
-		<field type="check" variable="createDesktopIcon">
-			<spec txt="Create a desktop shortcut to start BEAST from your Desktop?" true="on" false="off" set="false"/>
-		</field>
-			
 			
 	</panel>
 </izpack:userinput>
