@@ -2,6 +2,8 @@ package additionalClasses;
 
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
+
 import com.izforge.izpack.panels.process.AbstractUIProcessHandler;
 
 
@@ -56,6 +58,8 @@ public class AutoStarter {
         pathToJar = pathToJar.replace("\\", "/");
         
         ProcessBuilder builder = new ProcessBuilder("java", "-jar", pathToJar);
+        
+        JOptionPane.showMessageDialog(null, pathToJar);
         
         try {
             builder.start();
