@@ -70,10 +70,10 @@
 		<panel classname="TargetPanel" />
 		<panel classname="PacksPanel" />
 		<panel classname="InstallPanel" />
-		<panel classname="ShortcutPanel" id="shortcutpanel" />
+<!-- 	<panel classname="ShortcutPanel" id="shortcutpanel" /> -->	
 		<panel classname="UserInputPanel" id="additionalOptions" />
 		<panel classname="ProcessPanel" id="processPanel" />
-		<panel classname="FinishPanel" />
+<!-- 		<panel classname="FinishPanel" /> -->	
 	</panels>
 
 

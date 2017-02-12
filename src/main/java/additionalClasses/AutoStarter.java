@@ -1,6 +1,9 @@
 package additionalClasses;
 
 import java.io.IOException;
+import java.util.Iterator;
+
+import javax.swing.JOptionPane;
 
 import com.izforge.izpack.panels.process.AbstractUIProcessHandler;
 
@@ -51,9 +54,10 @@ public class AutoStarter {
         }
     }
     
-    private void startOnLinux(String pathToJar) { 
+    private void startOnLinux(String pathToJar) {
+        
         ProcessBuilder builder = new ProcessBuilder("java", "-jar", pathToJar);
-
+        
         try {
             builder.start();
         } catch (IOException e) {
