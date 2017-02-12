@@ -56,7 +56,7 @@ public class AutoStarter {
     
     private void startOnLinux(String pathToJar) {
         
-        ProcessBuilder builder = new ProcessBuilder("java", "-jar", pathToJar);
+        ProcessBuilder builder = new ProcessBuilder("java", "-jar", "/home/lukas/beast/core/BEAST.jar");
         
         try {
             builder.start();
