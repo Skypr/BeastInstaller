@@ -1,6 +1,7 @@
 package additionalClasses;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
@@ -57,7 +58,16 @@ public class AutoStarter {
         
         ProcessBuilder builder = new ProcessBuilder("java", "-jar", pathToJar);
         
-        JOptionPane.showMessageDialog(null, "path to jar: " + pathToJar);
+        java.util.List<String> command = builder.command();
+        
+        String call = "";
+        
+        for (Iterator iterator = command.iterator(); iterator.hasNext();) {
+            String string = (String) iterator.next();
+            call = call + " " + string;
+        }
+        
+        JOptionPane.showMessageDialog(null, "path to jar: " + call);
         
         try {
             builder.start();

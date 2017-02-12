@@ -6,7 +6,7 @@
 	
 	<programGroup defaultName="Applications" location="applications"/>
 	
-  <shortcut
+ <!-- <shortcut
     name="BEAST"
     target="java -jar $INSTALL_PATH/core/BEAST.jar"
     commandLine=""
@@ -21,7 +21,7 @@
     startup="no">
     <os family="unix" />
     <createForPack name="Linux dependencies"/>
-  </shortcut>
+  </shortcut>  -->
 
  <shortcut
     name="BEAST"
