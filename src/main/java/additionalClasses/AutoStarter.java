@@ -55,11 +55,12 @@ public class AutoStarter {
     
     private void startOnLinux(String pathToJar) {
 
-        pathToJar.replaceAll("\"", "");
+        pathToJar.replaceAll("^\"|\"$", "");
         pathToJar = pathToJar.replace("\\", "/");
         
         
-        JOptionPane.showMessageDialog(null, pathToJar + "|" + "/home/lukas/beast/core/BEAST.jar");
+        JOptionPane.showMessageDialog(null, pathToJar);
+        JOptionPane.showMessageDialog(null, pathToJar.split("\""));
         
 //        ProcessBuilder builder = new ProcessBuilder("java", "-jar", pathToJar);
         
