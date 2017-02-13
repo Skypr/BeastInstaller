@@ -61,8 +61,10 @@ public class AutoStarter {
         
         JOptionPane.showMessageDialog(null, pathToJar);
         
+//        ProcessBuilder builder = new ProcessBuilder("java", "-jar", pathToJar);
+        
+        ProcessBuilder builder = new ProcessBuilder("java", "-jar", "/home/lukas/beast/core/BEAST.jar");
         try {
-            ProcessBuilder builder = new ProcessBuilder("nohup", "java", "-jar", pathToJar, "&");
             builder.start();
         } catch (IOException e) {
             e.printStackTrace();
