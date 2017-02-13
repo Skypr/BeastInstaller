@@ -57,7 +57,7 @@ public class AutoStarter {
 
         //try everything to remove spaces
         pathToJar.replaceAll("^\"|\"$", "");
-        pathToJar = pathToJar.replace("\\", "/");
+      //  pathToJar = pathToJar.replace("\\", "/");
         
         ProcessBuilder builder = new ProcessBuilder("java", "-jar", "/" + pathToJar);
         try {

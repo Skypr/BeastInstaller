@@ -2,6 +2,5 @@
  
  
     <str id="installer.reversetitle" txt="IzPack - installation of $APP_NAME $APP_VER"/>
- 
   
 </izpack:langpack>

@@ -23,7 +23,7 @@
 
 	<info>
 		<appname>BEAST</appname>
-		<appversion>1.0</appversion>
+		<appversion>1.4</appversion>
 		<appsubpath>beast</appsubpath>
 		<javaversion>1.8</javaversion>
 
@@ -36,7 +36,7 @@
 			<author name="Holger Klein" email="holgerhugoklein@gmail.com" />
 			<author name="Nikolai Schnell" email="nikolaischnell@gmx.de" />
 			<author name="Lukas Stapelbroek" email="lukas-stapelbroek@gmx.de" />
-			<author name="Jonas Wohnig" email="Jonas.Wohnig@gmx.net" />
+			<author name="Jonas Wohnig" email="jonas.wohnig@gmx.net" />
 		</authors>
 
 	</info>
@@ -60,7 +60,7 @@
 	</consoleprefs>
 
 	<panels>
-		<panel classname="HelloPanel" />
+		<panel classname="HelloPanel" id="welcome" />
 		<panel classname="LicencePanel" id="licence" />
 
 		<panel classname="LicencePanel" id="licenceA" />
@@ -97,6 +97,11 @@
 		<res id="packsLang.xml_eng" src="./src/main/izpack/langPacks/myPacksLang.xml" />
 		<res id="packsLang.xml_deu" src="./src/main/izpack/langPacks/myPacksLang.xml_deu" />
 
+
+		<res id="userInputLang.xml" src="./src/main/izpack/langPacks/userInputLang.xml" />
+		<res id="userInputLang.xml_deu" src="./src/main/izpack/langPacks/userInputLang.xml_deu" />
+
+
 		<res id="shortcutSpec.xml" src="./src/main/izpack/shortcutSpec.xml" />
 
 		<res id="userInputSpec.xml" src="./src/main/izpack/userInputSpec.xml"
@@ -114,7 +119,7 @@
 			<description>The core files for BEAST that are always required.</description>
 
 			<file src="./src/main/izpack/packs/core/" targetdir="$INSTALL_PATH/" />
-			<file src="./src/main/izpack/packs/SampleFiles/" targetdir="$INSTALL_PATH/" />
+			<file src="./src/main/izpack/packs/projectFiles/" targetdir="$INSTALL_PATH/" />
 			
 		</pack>
 

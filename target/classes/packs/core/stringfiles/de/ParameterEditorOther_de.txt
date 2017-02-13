@@ -13,7 +13,8 @@ days : Tage
 title_advanced : Benutzerdefinierte Argumente für CBMC
 ok : OK
 cancel : Abbrechen
-title_version : Versionsnummer
+title_about : About BEAST
+about : About
 version : Version
 openDialogTitleText : Projekt Öffnen
 saveDialogTitleText : Projekt Speichern
@@ -50,7 +51,7 @@ inputOutputErrorSave : Das Verzeichnis in dem gespeichert werden soll existiert 
 wrongFileNameError : Der angegebene Name entspricht nicht dem regulären Ausdruck '[_a-zA-Z0-9\-\.\s]+'.
 fileSuffix : .beast
 saveChanges : Änderungen an '
-save : ' speichern?
+saveChangesSuffix : ' speichern?
 yesOption : Ja
 noOption : Nein
 cancelOption : Abbrechen
@@ -62,3 +63,4 @@ startingCheck : Analyse wird gestartet
 waitingForPropertyResult : Warte auf Ergebnis der Eigenschaft '
 analysisEnded : Analyse beendet nach
 noProperty : Es wurde keine Eigenschaft zur Analyse ausgewählt.
+falseStop : Nur eine laufende Analyse kann gestoppt werden.
