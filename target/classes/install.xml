@@ -70,10 +70,10 @@
 		<panel classname="TargetPanel" />
 		<panel classname="PacksPanel" />
 		<panel classname="InstallPanel" />
-<!-- 	<panel classname="ShortcutPanel" id="shortcutpanel" /> -->	
+		<!-- <panel classname="ShortcutPanel" id="shortcutpanel" /> -->
 		<panel classname="UserInputPanel" id="additionalOptions" />
 		<panel classname="ProcessPanel" id="processPanel" />
- 		<panel classname="SimpleFinishPanel" /> 	
+		<panel classname="SimpleFinishPanel" />
 	</panels>
 
 
@@ -120,7 +120,7 @@
 
 			<file src="./src/main/izpack/packs/core/" targetdir="$INSTALL_PATH/" />
 			<file src="./src/main/izpack/packs/projectFiles/" targetdir="$INSTALL_PATH/" />
-			
+
 		</pack>
 
 		<pack name="Windows dependencies" required="no">
@@ -130,7 +130,12 @@
 
 		<pack name="Linux dependencies" required="no">
 			<description>The needed files if you want to use BEAST on Linux.</description>
-			<file unpack="true" src="./src/main/izpack/packs/linux/cbmcLin.tgz" targetdir="$INSTALL_PATH/linux/" />
+			<file src="./src/main/izpack/packs/linux/" targetdir="$INSTALL_PATH/" />
+
+			<executable targetfile="$INSTALL_PATH/linux/cbmc" type="bin"
+				stage="never" failure="warn" keep="true">
+
+			</executable>
 		</pack>
 	</packs>
 
