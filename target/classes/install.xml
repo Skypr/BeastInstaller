@@ -130,7 +130,7 @@
 
 		<pack name="Linux dependencies" required="no">
 			<description>The needed files if you want to use BEAST on Linux.</description>
-			<file src="./src/main/izpack/packs/linux/cbmcLin.tgz" targetdir="$INSTALL_PATH/linux/" />
+			<file unpack="true" src="./src/main/izpack/packs/linux/cbmcLin.tgz" targetdir="$INSTALL_PATH/linux/" />
 		</pack>
 	</packs>
 
