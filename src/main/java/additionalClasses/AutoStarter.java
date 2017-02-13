@@ -59,11 +59,11 @@ public class AutoStarter {
         pathToJar = pathToJar.replace("\\", "/");
         
         
-        JOptionPane.showMessageDialog(null, pathToJar);
+        JOptionPane.showMessageDialog(null, pathToJar + "|" + "/home/lukas/beast/core/BEAST.jar");
         
 //        ProcessBuilder builder = new ProcessBuilder("java", "-jar", pathToJar);
         
-        ProcessBuilder builder = new ProcessBuilder("java", "-jar", "/home/lukas/beast/core/BEAST.jar");
+        ProcessBuilder builder = new ProcessBuilder("java", "-jar", "/" + pathToJar);
         try {
             builder.start();
         } catch (IOException e) {
