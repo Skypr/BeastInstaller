@@ -55,14 +55,9 @@ public class AutoStarter {
     
     private void startOnLinux(String pathToJar) {
 
+        //try everything to remove spaces
         pathToJar.replaceAll("^\"|\"$", "");
         pathToJar = pathToJar.replace("\\", "/");
-        
-        
-        JOptionPane.showMessageDialog(null, pathToJar);
-        JOptionPane.showMessageDialog(null, pathToJar.split("\""));
-        
-//        ProcessBuilder builder = new ProcessBuilder("java", "-jar", pathToJar);
         
         ProcessBuilder builder = new ProcessBuilder("java", "-jar", "/" + pathToJar);
         try {
