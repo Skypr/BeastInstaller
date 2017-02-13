@@ -15,7 +15,7 @@
       <os family="unix" />
       <executeclass name="additionalClasses.AutoStarter">
             <arg>$startAfterFinish$</arg>
-            <arg>$INSTALL_PATH\core\BEAST.jar</arg>
+            <arg>$INSTALL_PATH/core/BEAST.jar</arg>
             <arg>1</arg>
         </executeclass>
     </job>
