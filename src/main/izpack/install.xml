@@ -114,7 +114,8 @@
 			<description>The core files for BEAST that are always required.</description>
 
 			<file src="./src/main/izpack/packs/core/" targetdir="$INSTALL_PATH/" />
-
+			<file src="./src/main/izpack/packs/SampleFiles/" targetdir="$INSTALL_PATH/" />
+			
 		</pack>
 
 		<pack name="Windows dependencies" required="no">
